@@ -11,6 +11,7 @@ repositories {
 
 ext {
     junitVersion = '5.8.2'
+    assertJVersion = '3.22.0'
 }
 
 sourceCompatibility = '1.8'
@@ -23,6 +24,8 @@ tasks.withType(JavaCompile) {
 dependencies {
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
+    // https://mvnrepository.com/artifact/org.assertj/assertj-core
+    testImplementation("org.assertj:assertj-core:${assertJVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
 }
 
