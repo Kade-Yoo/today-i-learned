@@ -6,14 +6,14 @@ import static enums.Color.GREEN;
 
 public class Apple {
 
-    private final int weight;
+    private final Integer weight;
     private final Color color;
-    public Apple(int weight, Color color) {
+    public Apple(Integer weight, Color color) {
         this.weight = weight;
         this.color = color;
     }
 
-    public int getWeight() {
+    public Integer getWeight() {
         return weight;
     }
 

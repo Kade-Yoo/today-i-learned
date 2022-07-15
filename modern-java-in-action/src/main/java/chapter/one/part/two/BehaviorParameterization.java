@@ -91,6 +91,12 @@ public class BehaviorParameterization {
         return result;
     }
 
+    /**
+     * 2.2.1 네 번째 시도 : 추상적 조건으로 필터링
+     *
+     * @param inventory 사과 상자
+     * @param applePredicate 조건
+     */
     public static List<Apple> filterApples(List<Apple> inventory, ApplePredicate applePredicate) {
         List<Apple> result = new ArrayList<>();
         for (Apple apple : inventory) {
