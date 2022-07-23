@@ -6,11 +6,21 @@ import static enums.Color.GREEN;
 
 public class Apple {
 
-    private final Integer weight;
-    private final Color color;
+    private Integer weight;
+    private Color color;
     public Apple(Integer weight, Color color) {
         this.weight = weight;
         this.color = color;
+    }
+
+    public Apple() {}
+    public Apple(Integer weight) {
+        this.weight = weight;
+    }
+
+    public Apple(Color s, Integer integer, Integer integer1) {
+        this.color = s;
+        this.weight = integer;
     }
 
     public Integer getWeight() {
