@@ -38,4 +38,8 @@ public class Apple {
     public static boolean isHeavyApple(Apple apple) {
         return apple.getWeight() > 150;
     }
+
+    public String toString() {
+        return "무게 : " + this.weight + ", 색상 : " + this.color;
+    }
 }
