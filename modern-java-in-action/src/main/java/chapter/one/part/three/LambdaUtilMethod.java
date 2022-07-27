@@ -44,7 +44,7 @@ public class LambdaUtilMethod {
     }
 
     /**
-     * g(f(x))
+     * f(g(x))
      */
     public static List<String> composeApples(List<Apple> inventory) {
         Function<Apple, String> appleFunction = Apple::toString;
@@ -53,7 +53,7 @@ public class LambdaUtilMethod {
     }
 
     /**
-     * f(g(x))
+     * g(f(x))
      */
     public static List<Apple> thenApples(List<Apple> inventory) {
         Function<Apple, String> appleFunction = Apple::getColorName;
