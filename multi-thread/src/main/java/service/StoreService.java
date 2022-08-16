@@ -8,7 +8,7 @@ public class StoreService {
 
     public String save(String productId) {
         this.productId = productId;
-        sleep();
+        sleep(1000);
         return this.productId;
     }
 }

@@ -8,7 +8,7 @@ public class ThreadLocalStoreService {
 
     public String save(String productId) {
         this.productId.set(productId);
-        sleep();
+        sleep(1000);
         return this.productId.get();
     }
 }
