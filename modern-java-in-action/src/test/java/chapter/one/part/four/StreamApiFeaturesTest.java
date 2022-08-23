@@ -36,10 +36,20 @@ class StreamApiFeaturesTest {
     }
 
     @Test
-    @DisplayName("낮은 칼로리이면서 칼로리로 정렬했을 때(Java 8 이후 로직)")
+    @DisplayName("낮은 칼로리이면서 칼로리로 정렬했을 때(Java 8 이후 로직 Standard Stream)")
     void getLowCaloriesOrderByCaloryAfterJava8() {
         List<Dish> allDishs = dishTestCase.getAllDishs();
         List<Dish> lowCaloriesOrderByCaloryAfterJava8 = streamApiFeatures.getLowCaloriesOrderByCaloryAfterJava8(allDishs);
+        Assertions.assertThat(lowCaloriesOrderByCaloryAfterJava8)
+                .extracting(Dish::getDishName, Dish::getCalory)
+                .containsAll(getTupleLowCaloriesOrderByCalory());
+    }
+
+    @Test
+    @DisplayName("낮은 칼로리이면서 칼로리로 정렬했을 때(Java 8 이후 로직 Parallel Stream)")
+    void getParallelLowCaloriesOrderByCaloryAfterJava8() {
+        List<Dish> allDishs = dishTestCase.getAllDishs();
+        List<Dish> lowCaloriesOrderByCaloryAfterJava8 = streamApiFeatures.getParallelLowCaloriesOrderByCaloryAfterJava8(allDishs);
         Assertions.assertThat(lowCaloriesOrderByCaloryAfterJava8)
                 .extracting(Dish::getDishName, Dish::getCalory)
                 .containsAll(getTupleLowCaloriesOrderByCalory());
