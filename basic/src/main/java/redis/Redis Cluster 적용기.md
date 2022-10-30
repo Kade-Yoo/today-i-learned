@@ -24,3 +24,19 @@ cluster-node-timeout 3000                       -- cluster node timeout 설정
 appendonly yes                                  -- 스냅샷과 같은 append-only-file을 만드는 설정
 dir /Users/kade/cluster/7000                    -- 디렉토리 위치
 ```
+
+### redis node 실행
+```
+redis-server {path}/redis.conf
+```
+
+### Cluster master, slave 생성
+```
+redis-server --cluster mode 127.0.0.1:7000 127.0.0.1:7001 127.0.0.1:7002 127.0.0.1:7003
+127.0.0.1:7004 127.0.0.1:7005 --cluster-replica 1
+```
+
+### Cluster slave node 추가
+```
+redis-server --cluster add-node 127.0.0.1:7006 127.0.0.1:7000 --cluster-slave --cluster-master-id {id}
+```
